@@ -6,14 +6,14 @@ A small movie/TV shelf built with React hooks. Add titles, filter them by title
 and by minimum star rating, then click any card to open its description and
 watch the trailer on its own page.
 
-## Run it
+## Run it:
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Routes
+## Routes:
 
 | Path | Page | What it does |
 | --- | --- | --- |
@@ -36,7 +36,7 @@ How the pieces fit together:
 - Getting back home: the "← Back to all titles" link on the detail page, or
   the Cinephile brand in the header, which is a `<Link to="/">` on every page.
 
-## Components
+## Components:
 
 | File | Role |
 | --- | --- |
@@ -55,7 +55,7 @@ How the pieces fit together:
 
 Every movie is `{ id, title, description, posterURL, trailerLink, rating }`.
 
-## Trailer links
+## Trailer links:
 
 `trailerLink` is stored as an embed URL, e.g.
 `https://www.youtube.com/embed/VIDEO_ID`. The add-movie form is forgiving:
@@ -64,14 +64,14 @@ the 11-character video id, and `toEmbedUrl()` in `src/utils/trailer.js`
 converts it. A movie with no trailer shows a placeholder instead of an empty
 black box.
 
-## Hooks used
+## Hooks used:
 
 - `useState` — the movie list, filter values, form fields, modal visibility
 - `useMemo` — the filtered list, recomputed only when the list or a filter changes
 - `useEffect` — closes the dialog on `Escape`; scrolls the detail page to the top
 - `useParams` — reads `:id` out of the URL on the detail page
 
-## Deploying
+## Deploying:
 
 This is a single-page app, so the host must serve `index.html` for every
 path — otherwise a refresh on `/movie/2` returns a 404. On Netlify add a
